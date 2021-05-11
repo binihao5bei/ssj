@@ -124,8 +124,8 @@ fill_bold=PatternFill(fill_type='darkDown',fgColor='AACF91',bgColor='1874CD')
 ws3['A1'].font=font_bold
 ws3['A2'].fill=fill_bold
 #3.设置对齐方式
-#直接使用的cell的属性alignment  cell.alignment=Alignment(horizontal='',vertical='')
-align=Alignment(horizontal='center',vertical='center')
+#直接使用的cell的属性alignment  cell.alignment=Alignment(horizontal='',vertical='',wrapText=True),其中wrapText表示是否自动换行
+align=Alignment(horizontal='center',vertical='center',wrapText=True)
 for row in ws1.rows:
 	for cell in row:
 		cell.alignment=align
