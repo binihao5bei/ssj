@@ -1,0 +1,1693 @@
+# data 字典格式存放数据
+# info 用例信息
+# code 预期status code
+# assertion 返回json断言节点及预期数据
+#generate 需要生成的值
+#account
+
+send_sms_code:
+  - api_name: send_sms_code
+    data: { mobile: $<mobile>, scene: register }
+    info: 发送短信
+    generate:
+      mobile: mobile
+  - api_name: send_sms_code
+    data: { mobile: $<r_mobile>, scene: register }
+    info: 发送短信
+    generate:
+      r_mobile: mobile
+
+sms_register:
+  - api_name: sms_register
+    data: { mobile: $<mobile>, code: $<code> }
+    info: 短信注册
+    cookies: False
+    get:
+      mobile: mobile
+    generate:
+      code: code
+    assertion:
+      code: 0
+
+register:
+  - api_name: register
+    data: { teamname: TestTeam,username: TestUser,email: $<mobile> ,password: $<code>,user_from: lanhu,pending: 123 }
+    info: 初始化成功
+    get:
+      mobile: mobile
+      code: code
+    assertion:
+      active: True
+    set:
+      cookie: cookie
+      user_id: $.id
+      to_team_id: $.teams[0].id
+#  - data: { teamname: TestTeam,username: TestUser,email: 4@1.lanhu ,password: 111111,user_from: lanhu,pending: 123 }
+#    api_name: register
+#    cookies: False
+#    info: 邮箱已注册
+#    assertion:
+#      code: "10021"
+#      msg: Email already sighed or been invited
+reset_password:
+  - data: { email: $<email> }
+    api_name: reset_password
+    info: 忘记密码发送邮件
+    cookies: False
+    get:
+      email: email
+    assertion:
+      code: "00000"
+      msg: Success
+  - data: { email: 200@aab.lannhu }
+    api_name: reset_password
+    info: 未注册
+    assertion:
+      code: 10001
+      msg: No such user
+
+put_reset_password:
+  - api_name: put_reset_password
+    info: 邮件修改密码
+    data: { password: 111111 }
+    assertion:
+      code: "00000"
+      msg: Success
+change_password:
+  - data: { email: $<email>,password: 111111,old_password: 111111 }
+    api_name: change_password
+    info: 修改密码
+    get:
+      email: email
+    assertion:
+      code: "00000"
+      msg: Success
+login:
+  - data: { email: 3@1.lanhuapp, password: 111111 }
+    api_name: login
+    cookies: False
+    info: 登录成功
+    assertion:
+      email: 3@1.lanhuapp
+      id: exist
+    set:
+      cookie: cookie
+      id: $.id
+      teams: $.teams..id
+  #  - data: { email: 7@1.lanhu, password: 1111111 }
+  #    api_name: login
+  #    cookies: False
+  #    info: 密码错误
+  #    assertion:
+  #      code: 10002
+  #      msg: Username or password wrong
+  - data: { email: 10000@1.lanhuapp, password: 111111 }
+    api_name: login
+    cookies: False
+    info: 未注册用户
+    assertion:
+      code: 10001
+      msg: No such user
+logout:
+  - data: { }
+    api_name: logout
+    info: 正常退出
+    assertion:
+      code: "00000"
+      msg: Success
+check_email:
+  - data: { email: 2@1.lanhu }
+    api_name: check_email
+    info: 已注册邮箱
+    assertion:
+      code: 10003
+      msg: User already exist
+  - data: { email: 2@102.lanhu }
+    api_name: check_email
+    info: 未注册账户
+    assertion:
+      code: "00000"
+      msg: Success
+put_userinfo:
+  - api_name: put_userinfo
+    info: 修改用户名
+    data: { username: $<user_name> }
+    generate:
+      user_name: user_name
+    assertion:
+      code: "00000"
+      msg: Success
+  - api_name: put_userinfo
+    info: 修改微信通知类型
+    data: { notify_type: at_self }
+    assertion:
+      code: "00000"
+      msg: Success
+wechat:
+  - api_name: wechat_follow
+    info: 获取微信二维码
+    data: { }
+    assertion:
+      result.code: "00000"
+  - api_name: wechat_unbind
+    info: 微信解绑
+    data: { }
+    assertion:
+      result.code: "00000"
+      result.msg: Success
+lark_lark:
+  - api_name: lark_unbind
+    info: 解绑飞书
+    assertion:
+      result.code: "10001"
+      result.msg: No such user
+user_pop_up:
+  - api_name: put_user_pop_up
+    info: 设置用户弹框
+    data: { sub_group: version_compare,read: true }
+    assertion:
+      code: "00000"
+      msg: Success
+  - api_name: user_pop_up
+    info: 获取用户弹窗信息
+    data: { sub_group: version_compare }
+    assertion:
+      code: "00000"
+      msg: Success
+      data: true
+
+
+
+#team
+user_in_team_nickname:
+  - api_name: user_in_team_nickname
+    info: 修改团队备注名
+    data: { user_id: $<u_id>,team_id: $<t_id>,nickname: user_in_team_nickname }
+    generate:
+      user_name: user_name
+    get:
+      u_id: user_id
+      t_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+get_user_settings:
+  - api_name: get_user_settings
+    info: 获取个人设置
+    data: { settings_type: web_main }
+
+user_profile:
+  - api_name: user_profile
+    info: 个人操作设置
+    data:
+      info:
+        - { group: black_tech,selectMode: true,zoomMode: false }
+    assertion:
+      code: "00000"
+      msg: success
+
+user_detail:
+  - api_name: user_detail
+    info: 用户信息
+    data: { }
+    assertion:
+      code: "00000"
+      msg: Success
+
+current_user_in_list:
+  - api_name: current_user_in_list
+    info: 获取当前用户的配置信息
+    data: { id: feishu }
+    assertion:
+      code: "00000"
+      msg: Success
+
+version_tips:
+  - api_name: version_tips
+    info: 获取版本更新
+    data: { version: 2.89 }
+ws_url:
+  - api_name: ws_url
+    info: ws_url
+    data: { model: magic-web }
+    assertion:
+      code: "00000"
+      msg: SUCCESS
+
+#team
+creat_team:
+  - data: { name: TestTeam }
+    api_name: creat_team
+    params: { team_id: team_id }
+    info: 创建团队A成功
+    assertion:
+      result.name: TestTeam
+      result.id: exist
+    generate:
+      team_id: uuid
+    set:
+      A_team_id: $..id
+      team_name: $.result.name
+  - data: { name: TestTeam }
+    api_name: creat_team
+    params: { team_id: team_id }
+    info: 创建团队B成功
+    assertion:
+    generate:
+      team_id: uuid
+    set:
+      team_id: $..id
+      team_name: $..name
+del_team:
+  - data: { team_id: $<team_id>,team_name: $<team_name>, password: 11111111 }
+    api_name: del_team
+    params: { team_id: team_id }
+    info: 密码错误
+    get:
+      team_id: A_team_id
+      team_name: team_name
+    assertion:
+      code: "10002"
+      msg: Username or password wrong
+  - data: { team_id: $<team_id>,team_name: $<team_name>, password: 111111 }
+    api_name: del_team
+    params: { team_id: team_id }
+    info: 删除成功
+    get:
+      team_id: A_team_id
+      team_name: team_name
+    assertion:
+      code: "00000"
+      msg: Success
+  - data: { team_id: $<team_id>,team_name: $<team_name>, password: 111111 }
+    api_name: del_team
+    params: { team_id: team_id }
+    info: 再次删除团队
+    get:
+      team_id: A_team_id
+      team_name: team_name
+    assertion:
+      code: "10006"
+      msg: Team not exist
+user_teams:
+  - api_name: user_teams
+    info: 获取用户团队
+    data: { }
+get_team:
+  - data: { }
+    api_name: get_team
+    params: { team_id: team_id }
+    info: 获取团队信息
+    assertion:
+      result.name: TestTeam
+    get:
+      team_id: team_id
+put_team:
+  - data: { name: 修改后名称,team_id: $<team_id>, }
+    api_name: put_team
+    params: { team_id: team_id }
+    info: 修改团队名称
+    assertion:
+      code: "00000"
+      msg: Success
+    get:
+      team_id: team_id
+
+serializer:
+  - data: { time: 1209600,data: { team_id: $<team_id>,date: $<date>,project_ids: [ ],role: member, },pending: 123 }
+    api_name: serializer
+    info: 生成邀请链接
+    generate:
+      date: date
+    get:
+      team_id: team_id
+    set:
+      serialized: $.result
+  - data: { time: 1209600,data: { team_id: $<team_id>,date: $<date>,project_ids: [ ],role: member, },pending: 123 }
+    api_name: serializer
+    info: 生成团队A邀请链接
+    generate:
+      date: date
+    get:
+      team_id: A_team_id
+    set:
+      A_serialized: $.result
+
+short_url:
+  - data: { url: "https://dev.lanhuapp.com/web/#!/user/invite?tid=$<team_id>",param: $<serialized>, param_time: 1209600 }
+    api_name: short_url
+    info: 生成短链
+    get:
+      team_id: team_id
+      serialized: serialized
+put_invite_member:
+  - data: { email: $<mobile>,team_id: $<team_id>,role: member,invite_id: $<invite_id>,serialized_str: $<serialized_str> }
+    api_name: put_invite_member
+    info: 邮箱加入
+    get:
+      team_id: team_id
+      mobile: mobile
+      invite_id: id
+      serialized_str: serialized
+    assertion:
+      code: "00000"
+      msg: Success
+put_invite_no_trace:
+  - data: { email: "",mobile: $<mobile>, team_id: $<team_id>,role: member,invite_id: $<invite_id>,serialized_str: $<serialized_str>,pending: 123 }
+    api_name: put_invite_no_trace
+    info: 链接加入
+    get:
+      team_id: A_team_id
+      invite_id: id
+      serialized_str: A_serialized
+      mobile: mobile
+    set:
+      A_user_id: $.user_id
+    assertion:
+      code: "00000"
+      msg: Success
+#  - data: { email: "", mobile: $<mobile>, password: $<r_code>,team_id: $<team_id>,role: member,invite_id: $<invite_id>,serialized_str: $<serialized_str>,pending: 123 }
+#    api_name: put_invite_no_trace
+#    info: 链接注册加入
+#    get:
+#      team_id: A_team_id
+#      invite_id: id
+#      serialized_str: A_serialized
+#      mobile: r_mobile
+#    generate:
+#      r_code: code
+#    assertion:
+#      code: "00000"
+#      msg: Success
+
+remove_member:
+  - data: { team_id: $<team_id>,user_id: $<user_id> }
+    api_name: remove_member
+    info: 移除团队成员
+    get:
+      team_id: A_team_id
+      user_id: A_user_id
+    assertion:
+      code: "00000"
+      msg: Success
+quit_team:
+  - data: { team_id: $<team_id> }
+    api_name: quit_team
+    info: 退出团队
+    get:
+      team_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+search_member:
+  - data: { keyword: test,team_id: $<team_id>,user_ids: [ ] }
+    api_name: search_member
+    info: 搜索团队成员
+    get:
+      team_id: team_id
+create_department:
+  - data: { team_id: $<team_id>,name: TestGroup,order_index: 0,user_ids: [ ] }
+    api_name: create_department
+    info: 创建分组
+    get:
+      team_id: team_id
+    set:
+      department_id: $.result.id
+del_department:
+  - data: { team_id: $<team_id>,department_id: $<department_id> }
+    api_name: del_department
+    info: 删除分组
+    get:
+      team_id: team_id
+      department_id: department_id
+    assertion:
+      code: "00000"
+      msg: Success
+users_in_department:
+  - api_name: users_in_department
+    info: 分组下权限低于当前用户的信息
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+    assertion:
+      code: "00000"
+      msg: success
+
+update_member:
+  - data: { user_ids: [ $<user_id> ],role_name: member,team_id: $<team_id> }
+    api_name: update_member
+    info: 修改成员权限
+    get:
+      team_id: team_id
+      user_id: user_id
+    assertion:
+      code: "00000"
+      msg: Success
+  - data: { user_ids: [ 61522163-bc91-454d-b653-119908c8f844 ],role_name: member,team_id: $<team_id> }
+    api_name: update_member
+    info: 未注册用户
+    get:
+      team_id: team_id
+    assertion:
+      code: "10001"
+      msg: No such user
+  - data: { user_ids: [ $<user_id> ],role_name: member,team_id: $<team_id> }
+    api_name: update_member
+    info: 没有权限
+    get:
+      team_id: to_team_id
+      user_id: user_id
+    assertion:
+      code: "10075"
+
+
+update_projects:
+  - data: { team_id: $<team_id>,info: [ { user_id: $<user_id>,add_project: $<project_id>, rm_project: "" } ] }
+    api_name: update_projects
+    info: 增加成员项目
+    get:
+      team_id: team_id
+      user_id: user_id
+      project_id: project_id
+  - data: { team_id: $<team_id>,info: [ { user_id: $<user_id>,add_project: "", rm_project: $<project_id> } ] }
+    api_name: update_projects
+    info: 减少成员项目
+    get:
+      team_id: team_id
+      user_id: user_id
+      project_id: project_id
+users_to_projects:
+  - data: { team_id: $<team_id> }
+    api_name: users_to_projects
+    info: 获取成员团队项目
+    get:
+      team_id: team_id
+    assertion:
+      code: "00000"
+      msg: success
+user_folder_project:
+  - api_name: user_folder_project
+    info: 获取团队的项目、文件夹目录
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+
+transfer_team:
+  - data: { team_id: $<team_id>,to_user_id: $<to_user_id> }
+    api_name: transfer_team
+    info: 移交成功
+    get:
+      team_id: team_id
+      to_user_id: A_user_id
+    assertion:
+      code: "00000"
+      msg: Success
+user_projects_cnt:
+  - api_name: user_projects_cnt
+    info: 用户所在某团队的项目数
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+
+team_detail:
+  - api_name: team_detail
+    info: 获取团队详细信息
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+quota:
+  - api_name: quota
+    info: 获取团队名额信息
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+    assertion:
+      code: "00000"
+      msg: success
+
+
+#project
+create_project:
+  - data: { name: 123,team_id: $<team_id>,type: mobile,order_index: 3000,code: 10012 }
+    api_name: create_project
+    info: 创建成功
+    set:
+      project_id: $.result.id
+      p_name: $.result.name
+    get:
+      team_id: team_id
+    assertion:
+      result.name: 123
+  - data: { name: 123,team_id: $<team_id>,type: mobile,order_index: 3000,code: 10012 }
+    api_name: create_project
+    info: 创建成功
+    set:
+      A_project_id: $.result.id
+      p_name: $.result.name
+    get:
+      team_id: team_id
+    assertion:
+      result.name: 123
+  - data: { name: 123,team_id: $<team_id>,type: mobile,order_index: 2000,code: 10012 }
+    api_name: create_project
+    info: 没有权限
+    get:
+      team_id: to_team_id
+    status: 400
+#    assertion:
+#      code: 10075
+  - data: { team_id: $<team_id>,type: mobile,order_index: 2000,code: 10012 }
+    api_name: create_project
+    info: 未传名称
+    status: 400
+    get:
+      team_id: team_id
+    assertion:
+      message.name: name is required and should be a string
+  - data: { name: 123,type: mobile,order_index: 2000,code: 10012 }
+    api_name: create_project
+    info: 未传team_id
+    status: 400
+quit_project:
+  - api_name: quit_project
+    info: 退出项目
+    data: { pid: $<p_id>,team_id: $<t_id> }
+    get:
+      p_id: A_project_id
+      t_id: team_id
+del_project:
+  - data: { code: 10032,project_id: $<project_id>,team_id: $<team_id>,p_name: $<p_name> }
+    api_name: del_project
+    info: 删除成功
+    assertion:
+      code: "00000"
+      msg: Success
+    get:
+      team_id: team_id
+      project_id: project_id
+      p_name: p_name
+project_add_member:
+  - data: { pid: $<pid>, team_id: $<team_id>,add_users: $<add_users> }
+    api_name: project_add_member
+    info: 项目添加成员
+    get:
+      add_users: user_id
+      pid: project_id
+      team_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+project_rm_member:
+  - data: { pid: $<pid>, team_id: $<team_id>,rm_users: $<rm_users> }
+    api_name: project_rm_member
+    info: 项目删除成员
+    get:
+      rm_users: user_id
+      pid: project_id
+      team_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+change_project_type:
+  - data: { pid: $<pid>, team_id: $<team_id>,type: web }
+    api_name: change_project_type
+    info: 修改项目类型
+    get:
+      pid: project_id
+      team_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+change_project_name:
+  - data: { pid: $<pid>, team_id: $<team_id>,name: 修改后名称 }
+    api_name: change_project_type
+    info: 修改项目名称
+    get:
+      pid: project_id
+      team_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+get_project_info:
+  - data: { pid: $<pid>, team_id: $<team_id> }
+    api_name: get_project_info
+    info: 获取项目信息
+    get:
+      pid: project_id
+      team_id: team_id
+  - data: { pid: $<pid>, team_id: $<team_id> ,members: 1 }
+    api_name: get_project_info
+    info: 获取项目信息
+    get:
+      pid: project_id
+      team_id: team_id
+move_project:
+  - data: { project_id: $<project_id>, team_id: $<team_id>,target_team_id: $<target_team_id> }
+    api_name: move_project
+    info: 移动项目到其他团队
+    get:
+      project_id: A_project_id
+      team_id: team_id
+      target_team_id: A_team_id
+    assertion:
+      code: "00000"
+      msg: Success
+move_project_folder:
+  - data: { team_id: $<team_id>,folder_id: $<folder_id>,project_ids: [ $<project_id> ],code: 10028 }
+    api_name: move_project_folder
+    info: 移动项目到文件夹
+    get:
+      team_id: team_id
+      folder_id: folder_id
+      project_id: project_id
+    assertion:
+      code: "00000"
+      msg: Success
+project_usernames:
+  - api_name: project_usernames
+    info: 获取@项目成员
+    data: { team_id: $<t_id>,project_id: $<p_id> }
+    get:
+      t_id: team_id
+      p_id: project_id
+
+multiple_projects:
+  - api_name: multiple_projects
+    info: 获取团队下项目简单信息
+    data: { team_id: $<t_id>,project_ids: [ $<p_id> ] }
+    get:
+      t_id: team_id
+      p_id: project_id
+recently_used_project:
+  - api_name: recently_used_project
+    info: 获取团队下所有项目最近一个月最后使用时间
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+
+share_project:
+  - api_name: share_project
+    info: 快捷分享
+    data: { code: 10014,p_name: "项目名",team_id: $<t_id>,project_id: $<p_id> }
+    get:
+      t_id: team_id
+      p_id: project_id
+    assertion:
+      code: "00000"
+      msg: Success
+#文件夹
+create_folder:
+  - data: { team_id: $<team_id>,name: 新文件夹,order_index: 3000 }
+    api_name: create_folder
+    info: 新建文件夹
+    get:
+      team_id: team_id
+    set:
+      folder_id: $.result.id
+      folder_name: $.result.name
+  - data: { team_id: $<team_id>,name: 新文件夹,order_index: 3000 }
+    api_name: create_folder
+    info: 重复创建
+    get:
+      team_id: team_id
+    assertion:
+      code: "10070"
+      msg: Folder exist
+rename_folder:
+  - data: { team_id: $<team_id>,name: 重命名文件夹,order_index: 3000 ,folder_id: $<folder_id> }
+    api_name: rename_folder
+    info: 重命名文件夹
+    get:
+      team_id: team_id
+      folder_id: folder_id
+
+get_folder:
+  - data: { team_id: $<team_id>,folder_id: $<folder_id> }
+    api_name: get_folder
+    info: 获取文件夹信息
+    get:
+      team_id: team_id
+      folder_id: folder_id
+
+del_folder:
+  - data: { team_id: $<team_id>,folder_id: $<folder_id> }
+    api_name: del_folder
+    info: 删除文件夹
+    get:
+      team_id: team_id
+      folder_id: folder_id
+    assertion:
+      code: "00000"
+      msg: Success
+  - data: { team_id: $<team_id>,folder_id: $<folder_id> }
+    api_name: del_folder
+    info: 重复删除
+    get:
+      team_id: team_id
+      folder_id: folder_id
+    assertion:
+      code: "10071"
+      msg: No such folder
+folder_projects:
+  - data: { team_id: $<team_id>,project_id: $<project_id> }
+    api_name: folder_projects
+    info: 获取文件夹下项目
+    get:
+      team_id: team_id
+      folder_id: folder_id
+
+one_folder_projects:
+  - api_name: one_folder_projects
+    info: 获取文件夹下所有项目
+    data: { team_id: $<team_id>,folder_id: $<folder_id> }
+    get:
+      team_id: team_id
+      folder_id: folder_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+
+search:
+  - data: { team_id: $<team_id>,type: folder,keyword: 新, sort: relate, pageNo: 1,pageSize: 10 }
+    api_name: search
+    info: 搜索文件夹
+    assertion:
+      code: "00000"
+      msg: success
+    get:
+      team_id: team_id
+  - data: { team_id: $<team_id>,type: project,keyword: xin, sort: latest_update, pageNo: 2,pageSize: 8 }
+    api_name: search
+    info: 搜索项目
+    assertion:
+      code: "00000"
+      msg: success
+    get:
+      team_id: team_id
+  - data: { team_id: $<team_id>,type: image,keyword: image, sort: create_asc, pageNo: 1,pageSize: 8 }
+    api_name: search
+    info: 搜索设计图
+    assertion:
+      code: "00000"
+      msg: success
+    get:
+      team_id: team_id
+  - data: { team_id: $<team_id>,type: product,keyword: 原型, sort: letter_desc, pageNo: 1,pageSize: 50 }
+    api_name: search
+    info: 搜索原型
+    assertion:
+      code: "00000"
+      msg: success
+    get:
+      team_id: team_id
+
+
+
+##编辑区
+project_cover:
+  - api_name: project_cover
+    info: 设置项目封面
+    data: { project_id: $<p_id>,url: "https://alipic.lanhuapp.com/web4c3a2e26-8ac5-4d8f-971f-c72b46148aaa" }
+    get:
+      p_id: project_id
+    assertion:
+      code: "00000"
+      msg: Success
+dle_project_cover:
+  - api_name: del_project_cover
+    info: 设置项目封面
+    data: { project_id: $<p_id> }
+    get:
+      p_id: project_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+upload_image:
+  - api_name: upload_image
+    info: 上传设计图
+    data:
+      project_id: $<project_id>
+      team_id: $<team_id>
+      images:
+        - { "name": ImageA,"batch": "0","height": "141.75","width": "141.75","url": "https://alipic.lanhuapp.com/web4c3a2e26-8ac5-4d8f-971f-c72b46148aaa","id": $<imageA_id>,"positionX": "1879.2278591663075","positionY": "1953.2820595240257","type": "image","group": [ ] }
+        - { "name": ImageB,"width": "840","batch": "12","height": "141.75","url": "https://alipic.lanhuapp.com/webd41f3adf-2726-4f04-a137-5759fea51382","id": $<imageB_id>,"positionX": "2666.954196240229","positionY": "1562.7790758335832","type": "image","group": [ ] }
+    get:
+      project_id: project_id
+      team_id: team_id
+    generate:
+      imageA_id: uuid
+      imageB_id: uuid
+  - api_name: upload_image
+    info: 项目id不存在
+    data:
+      team_id: $<team_id>
+      images:
+        - { "name": ImageA,"width": "141.75","batch": "0","height": "141.75","url": "https://alipic.lanhuapp.com/web4c3a2e26-8ac5-4d8f-971f-c72b46148aaa","id": $<imageA_id>,"positionX": "1879.2278591663075","positionY": "1953.2820595240257","type": "image","group": [ ] }
+        - { "name": ImageB,"width": "840","batch": "12","height": "141.75","url": "https://alipic.lanhuapp.com/webd41f3adf-2726-4f04-a137-5759fea51382","id": $<imageB_id>,"positionX": "2666.954196240229","positionY": "1562.7790758335832","type": "image","group": [ ] }
+    status: 400
+    get:
+      project_id: project_id
+      team_id: team_id
+      imageA_id: imageA_id
+      imageB_id: imageB_id
+    assertion:
+      message: No project id!
+
+get_image:
+  - api_name: get_image
+    info: 获取图片信息
+    data: { image_id: $<i_id>,project_id: $<p_id>,team_id: $<t_id>,all_versions: 0 }
+    get:
+      i_id: imageA_id
+      p_id: project_id
+      t_id: team_id
+    set:
+      version_id: $..versions..id
+    assertion:
+      result.name: ImageA
+update_version:
+  - api_name: update_version
+    info: 修改图片版本名称
+    data: { name: 修改图片版本名称, version_id: $<v_id> }
+    get:
+      v_id: version_id
+    assertion:
+      code: "00000"
+      msg: Success
+user_pic_status:
+  - api_name: user_pic_status
+    info: 获取项目图片更新
+    data: { project_id: $<pid> }
+    get:
+      pid: project_id
+    assertion:
+      code: "00000"
+      msg: success
+
+image_contrast:
+  - api_name: image_contrast
+    info: 对比成功
+    data:
+      current_url: "https://alipic.lanhuapp.com/SketchCover8865fd00b353431b52fee2b99efffb88810cc60fe46b0ea63428b3e868a72759"
+      origin_url: "https://alipic.lanhuapp.com/SketchCover58eaa3815f8c92228574e392d103df9e03ebc547bf011734995389f8e0d16ad5"
+    assertion:
+      code: "00000"
+      data.tips_flag: 0
+  - api_name: image_contrast
+    info: 参数异常
+    data:
+      current_url: "https://alipic.lanhuapp.com/SketchCover8865fd00b353431b52fee2b99efffb88810cc60fe46b0ea63428b3e868a72759"
+      origin_url: ""
+    assertion:
+      code: "10006"
+  - api_name: image_contrast
+    info: 图片大小不一致
+    data:
+      current_url: "https://alipic.lanhuapp.com/SketchCover5c8a86b2f79bdd625893f7d4e4b7d6597caeddce5d215ee14be299466035fb8d"
+      origin_url: "https://alipic.lanhuapp.com/SketchCoverbe12ff00bacd783a043709a785cd9a01e49ce7abfed263092388ce2c55282490"
+    assertion:
+      code: "00000"
+      data.tips_flag: 1
+  - api_name: image_contrast
+    info: 图片无差异
+    data:
+      current_url: "https://alipic.lanhuapp.com/SketchCovere1cbdf6d492a32957a82579b4e0b9477b7a217e875b9256b659c4394a0057780"
+      origin_url: "https://alipic.lanhuapp.com/SketchCovere1cbdf6d492a32957a82579b4e0b9477b7a217e875b9256b659c4394a0057780"
+    assertion:
+      code: "00000"
+      data.tips_flag: -2
+
+copyimage:
+  - api_name: copyimage
+    info: 复制粘贴图片
+    data:
+      project_id: $<p_id>
+      team_id: $<t_id>
+      images:
+        - $<imageA_id>: { name: ImageA,type: image,id: $<copy_id>,"height": "141.75","width": "141.75","url": "https://alipic.lanhuapp.com/web4c3a2e26-8ac5-4d8f-971f-c72b46148aaa","positionX": "1879.2278591663075","positionY": "1953.2820595240257" }
+    generate:
+      copy_id: uuid
+    get:
+      p_id: project_id
+      t_id: team_id
+      imageA_id: imageA_id
+
+
+sector:
+  - api_name: sector
+    info: 创建设计图分组A
+    data: { project_id: $<p_id>,name: 创建分组, image_ids: [ $<i_id> ],id: $<sector_id> }
+    generate:
+      sector_id: uuid
+    get:
+      p_id: project_id
+      i_id: imageA_id
+    set:
+      sectorA_id: $.data.id
+    assertion:
+      code: "00000"
+      msg: Success
+  - api_name: sector
+    info: 创建设计图分组B
+    data: { project_id: $<p_id>,name: 创建分组, image_ids: [ $<i_id> ],id: $<sector_id> }
+    generate:
+      sector_id: uuid
+    get:
+      p_id: project_id
+      i_id: imageA_id
+    set:
+      sectorB_id: $.data.id
+    assertion:
+      code: "00000"
+      msg: Success
+  - api_name: sector
+    info: 创建设计图分组C
+    data: { project_id: $<p_id>,name: 创建分组, image_ids: [ $<i_id>,$<iA_id> ],id: $<sector_id> }
+    generate:
+      sector_id: uuid
+    get:
+      p_id: project_id
+      i_id: imageA_id
+      iA_id: imageB_id
+    set:
+      sectorC_id: $.data.id
+    assertion:
+      code: "00000"
+      msg: Success
+  - api_name: sector
+    info: 创建设计图分组D
+    data: { project_id: $<p_id>,name: 创建分组, image_ids: [ $<i_id> ],id: $<sector_id> }
+    generate:
+      sector_id: uuid
+    get:
+      p_id: project_id
+      i_id: imageA_id
+    set:
+      sectorD_id: $.data.id
+    assertion:
+      code: "00000"
+      msg: Success
+
+rename_sector:
+  - api_name: rename_sector
+    info: 重命名分组
+    data: { project_id: $<p_id>,name: 重命名分组, sector_id: $<sector_id> }
+    get:
+      p_id: project_id
+      sector_id: sector_id
+    assertion:
+      code: "00000"
+      msg: Success
+change_sector:
+  - api_name: change_sector
+    info: 分组增删设计图
+    data: { project_id: $<p_id>, sector_id: $<sector_id> ,add_image_ids: [ $<add_i_id> ],rm_image_ids: [ $<rm_i_id> ] }
+    get:
+      p_id: project_id
+      sector_id: sector_id
+      add_i_id: imageB_id
+      rm_i_id: imageA_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+del_sector:
+  - api_name: del_sector
+    info: 删除分组
+    data: { project_id: $<p_id>, sector_ids: [ $<sector_id> ] }
+    get:
+      sector_id: sector_id
+      p_id: project_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+sector_sort:
+  - api_name: sector_sort
+    info: 分组排序
+    data: { pre_child_sector_id: $<sectorD_id>,next_child_sector_id: $<sectorC_id> ,mv_sector_id: $<sectorA_id>,project_id: $<p_id> }
+    get:
+      p_id: project_id
+      sectorA_id: sectorA_id
+      sectorC_id: sectorC_id
+      sectorD_id: sectorD_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+sector_image_sort:
+  - api_name: sector_image_sort
+    info: 图片排序
+    data:
+      project_id: $<p_id>
+      target_sector_id: $<sector_id>
+      pre_image_id: null
+      next_image_id: $<next_id>
+      images:
+        - { from_sector_id: $<sector_id>,image_ids: [ $<i_id> ] }
+    get:
+      sector_id: sectorC_id
+      p_id: project_id
+      next_id: imageA_id
+      i_id: imageB_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+
+get_project_sectors:
+  - api_name: get_project_sectors
+    info: 获取分组
+    data: { project_id: $<p_id> }
+    get:
+      p_id: project_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+card:
+  - api_name: upload_image
+    info: 创建文字卡片
+    data:
+      project_id: $<project_id>
+      team_id: $<team_id>
+      images:
+        - { "name": "","width": "200","batch": "0","height": "200","url": "","id": $<cardA_id>,"positionX": "1879.2278591663075","positionY": "1953.2820595240257","type": "card" }
+    get:
+      project_id: project_id
+      team_id: team_id
+    generate:
+      cardA_id: uuid
+  - api_name: put_image
+    info: 填写文字卡片
+    data:
+      project_id: $<project_id>
+      team_id: $<team_id>
+      images:
+        - { image_id: $<c_id>,name: CardA }
+    get:
+      project_id: project_id
+      team_id: team_id
+      c_id: cardA_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+del_image:
+  - api_name: del_image
+    info: 删除image
+    data: { image_ids: $<i_id>,project_id: $<p_id>,team_id: $<t_id> }
+    get:
+      i_id: imageA_id
+      p_id: project_id
+      t_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+image_type:
+  - api_name: image_type
+    info: 组状态
+    data:
+      project_id: $<p_id>
+      team_id: $<t_id>
+      images:
+        - { image_id: $<imageA_id>,id: $<imageA_id>,"position_x": 1583.27567178275,"position_y": 2067.91370648354,type: setChild }
+        - { image_id: $<imageB_id>,id: $<imageB_id>,group: [ $<imageA_id> ],"position_x": 1583.27567178275,"position_y": 2067.91370648354,type: set }
+    get:
+      imageA_id: imageA_id
+      imageB_id: imageB_id
+      p_id: project_id
+      t_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+  - api_name: image_type
+    info: 脱离状态
+    data:
+      project_id: $<p_id>
+      team_id: $<t_id>
+      images:
+        - { image_id: $<imageB_id>,id: $<imageB_id>,type: image ,group: [ ] }
+        - { image_id: $<imageA_id>,id: $<imageA_id>,"position_x": 1259.9669317854525,"position_y": 2112.634253658643,type: image }
+    get:
+      imageA_id: imageA_id
+      imageB_id: imageB_id
+      p_id: project_id
+      t_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+
+upload_file:
+  - api_name: upload_image
+    info: 上传word
+    data:
+      project_id: $<project_id>
+      team_id: $<team_id>
+      images:
+        - { url: "https://lanhu-axure-file.oss-cn-beijing.aliyuncs.com/e7298128-c4f4-48ea-95f4-cd4ee29bc002",name: word_file,project_id: $<project_id>,type: word,layout_data: '{ "suffix": "docx" }',version_layout_data: '{ "suffix": "docx" }' }
+    get:
+      project_id: project_id
+      team_id: team_id
+    set:
+      word_id: $.result..share_id
+      word_v: $.result..version.id
+  - api_name: upload_image
+    info: 上传PDF
+    data:
+      project_id: $<project_id>
+      team_id: $<team_id>
+      images:
+        - { url: "https://lanhu-axure-file.oss-cn-beijing.aliyuncs.com/5fd354bf-8582-4e07-bbfc-7ebdcc05424b",name: pdf_file,project_id: $<project_id>,type: pdf,layout_data: '{ "suffix": "pdf" }',version_layout_data: '{ "suffix": "pdf" }' }
+    get:
+      project_id: project_id
+      team_id: team_id
+  - api_name: upload_image
+    info: 上传Excel
+    data:
+      project_id: $<project_id>
+      team_id: $<team_id>
+      images:
+        - { url: "https://axure-file.lanhuapp.com/206ff7b4-bf1e-48d5-9db1-aca9322ccb98",name: excel_file,project_id: $<project_id>,type: excel,layout_data: '{ "suffix": "xls" }',version_layout_data: '{ "suffix": "xls" }' }
+    get:
+      project_id: project_id
+      team_id: team_id
+  - api_name: upload_image
+    info: 上传PPT
+    data:
+      project_id: $<project_id>
+      team_id: $<team_id>
+      images:
+        - { url: "https://lanhu-axure-file.oss-cn-beijing.aliyuncs.com/c4d9600b-5189-4521-8c78-b925ce50a8a2",name: ppt_file,project_id: $<project_id>,type: ppt,layout_data: '{ "suffix": "pptx" }',version_layout_data: '{ "suffix": "pptx" }' }
+    get:
+      project_id: project_id
+      team_id: team_id
+del_file:
+  - api_name: del_image
+    info: 删除文件
+    data: { image_ids: $<i_id>,project_id: $<p_id>,team_id: $<t_id> }
+    get:
+      i_id: excel_id
+      p_id: project_id
+      t_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+search_image:
+  - api_name: search_image
+    info: 搜索image
+    data: { pid: $<pid>,team_id: $<team_id>,keyword: A }
+    get:
+      pid: project_id
+      team_id: team_id
+
+
+link:
+  - api_name: link
+    info: 创建连线
+    data:
+      project_id: $<project_id>
+      team_id: $<team_id>
+      links:
+        - { id: $<linkA_id>,parent: $<parent_id>,son: $<son_id> }
+    generate:
+      linkA_id: uuid
+    get:
+      project_id: project_id
+      team_id: team_id
+      parent_id: imageA_id
+      son_id: imageB_id
+del_link:
+  - api_name: del_link
+    info: 删除连线
+    data: { links: $<l_id>,project_id: $<p_id> }
+    get:
+      l_id: linkA_id
+      p_id: project_id
+    assertion:
+      code: "00000"
+      msg: Success
+connection_explain:
+  - api_name: connection_explain
+    info: 连线说明
+    data: { width: 50,height: 16,explain: 123,link_id: $<l_id>,project_id: $<p_id>,team_id: $<team_id> }
+    get:
+      l_id: linkA_id
+      p_id: project_id
+      team_id: team_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+
+
+#comment
+comment:
+  - api_name: comment
+    info: 创建评论
+    data: { comment_id: $<comment_id>,project_id: $<p_id>,team_id: $<t_id>,p_name: $<p_name>,version_id: $<v_id>,content: 创建评论,image_id: $<i_id>,position_x: 12,position_y: 22,text: 1 }
+    generate:
+      comment_id: uuid
+    get:
+      p_id: project_id
+      t_id: team_id
+      p_name: p_name
+      v_id: word_v
+      i_id: word_id
+
+  - api_name: put_comment
+    info: 修改评论
+    data: { comment_id: $<comment_id>,team_id: $<t_id>,content: 修改评论,position_x: 12,position_y: 22,text: 1 }
+    get:
+      t_id: team_id
+      comment_id: comment_id
+    assertion:
+      code: "00000"
+      msg: Success
+  - api_name: comment
+    info: 回复评论
+    data: { comment_id: $<comment_id>,project_id: $<p_id>,team_id: $<t_id>,p_name: $<p_name>,version_id: $<v_id>,content: 创建评论,image_id: $<i_id>,reply_id: $<reply_id> }
+    generate:
+      reply_id: uuid
+    get:
+      p_id: project_id
+      t_id: team_id
+      v_id: word_v
+      i_id: word_id
+      comment_id: comment_id
+      p_name: p_name
+change_comment_status:
+  - api_name: change_comment_status
+    info: 评论置为已读
+    data: { comment_id: $<comment_id>,read: true,team_id: $<t_id> }
+    get:
+      t_id: team_id
+      comment_id: comment_id
+    assertion:
+      code: "00000"
+      msg: Success
+  - api_name: change_comment_status
+    info: 评论置为未读
+    data: { comment_id: $<comment_id>,read: false,team_id: $<t_id> }
+    get:
+      t_id: team_id
+      comment_id: comment_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+del_comment:
+  - api_name: del_comment
+    info: 删除评论
+    data: { comment_id: $<comment_id>,project_id: $<p_id>,image_id: $<i_id> }
+    get:
+      p_id: project_id
+      i_id: word_id
+      comment_id: comment_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+bookmark:
+  - api_name: bookmark
+    info: 创建资源
+    data:
+      project_id: $<p_id>
+      bookmarks:
+        - { name: "baidu",url: "https://www.baidu.com",bookmark_id: $<bookmark_id>,type: link,filename: "" }
+    generate:
+      bookmark_id: uuid
+    get:
+      p_id: project_id
+    assertion:
+      code: "00000"
+      msg: Success
+get_bookmark:
+  - api_name: get_bookmark
+    info: 获取资源信息
+    data: { project_id: $<p_id> }
+    get:
+      p_id: project_id
+
+put_bookmark:
+  - api_name: put_bookmark
+    info: 修改资源
+    data:
+      project_id: $<p_id>
+      bookmarks:
+        - { name: "feng",url: "https://www.feng.com/",bookmark_id: $<bookmark_id>,type: link,filename: "",order: 1 }
+    get:
+      bookmark_id: bookmark_id
+      p_id: project_id
+    assertion:
+      code: "00000"
+      msg: Success
+del_bookmark:
+  - api_name: del_bookmark
+    info: 删除资源
+    data: { project_id: $<p_id>,bookmark_id: $<bookmark_id> }
+    get:
+      bookmark_id: bookmark_id
+      p_id: project_id
+    assertion:
+      code: "00000"
+      msg: Success
+get_compressed:
+  - api_name: get_compressed
+    info: 获取>20M的压缩后的图片
+    data: { pid: $<p_id>,team_id: $<t_id> }
+    get:
+      p_id: project_id
+      t_id: team_id
+
+#原型
+image_home:
+  - api_name: image_home
+    info: 设置原型主页
+    data: { code: 10020,image_set: $<i_id>,pid: $<p_id>,team_id: $<t_id> }
+    get:
+      p_id: project_id
+      t_id: team_id
+      i_id: imageA_id
+    assertion:
+      code: "00000"
+      msg: Success
+get_image_home:
+  - api_name: get_image_home
+    info: 获取原型主页
+    data: { pid: $<p_id>,team_id: $<t_id> }
+    get:
+      p_id: project_id
+      t_id: team_id
+
+prototype:
+  - api_name: prototype
+    info: 添加原型链接
+    data:
+      project_id: $<project_id>
+      team_id: $<team_id>
+      code: 10021
+      p_name: $<p_name>
+      positions:
+        - { next_image: $<imageA_id>,image_id: $<imageB_id>,p_x: 0.5295652173913044,p_y: 0.8212545828938778,p_w: 0.38608695652173913,p_h: 0.17357239716739492 }
+    get:
+      team_id: team_id
+      project_id: project_id
+      p_name: p_name
+      imageA_id: imageA_id
+      imageB_id: imageB_id
+    set:
+      prototyp_link: $.result..pid
+get_prototype:
+  - api_name: get_prototype
+    info: 获取原型链接
+    data: { pid: $<project_id>,team_id: $<team_id> }
+    get:
+      team_id: team_id
+      project_id: project_id
+
+notify_team:
+  - api_name: notify_team
+    info: 获取团队通知
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+
+put_notify_team:
+  - api_name: put_notify_team
+    info: 已读团队通知
+    data: { team_id: $<t_id>,all: true }
+    get:
+      t_id: team_id
+  - api_name: put_notify_team
+    info: 未读团队通知
+    data: { team_id: $<t_id>,all: true }
+    get:
+      t_id: team_id
+
+notify_project:
+  - api_name: notify_project
+    info: 获取所有项目通知
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+  - api_name: notify_project
+    info: 获取单个项目通知
+    data: { team_id: $<t_id>,pid: $<p_id> }
+    get:
+      t_id: team_id
+      p_id: project_id
+
+put_notify_project: #项目消息置为未读时500报错
+  - api_name: put_notify_project
+    info: 已读所有项目通知
+    data: { team_id: $<t_id>,all: true }
+    get:
+      t_id: team_id
+    assertion:
+      code: "00000"
+  - api_name: put_notify_team
+    info: 已读单项目通知
+    data: { pid: $<p_id>,all: true }
+    get:
+      p_id: project_id
+    assertion:
+      code: "00000"
+#  - api_name: put_notify_team
+#    info: 未读所有项目通知
+#    data: {team_id: $<t_id>,all: false}
+#    get:
+#      t_id: team_id
+#    assertion:
+#      code: "00000"
+#  - api_name: put_notify_team
+#    info: 未读单项目通知
+#    data: {pid: $<p_id>,all: false}
+#    get:
+#      p_id: project_id
+#    assertion:
+#      code: "00000"
+
+
+
+
+dsm_project:
+  - api_name: dsm_project
+    info: 获取dsm项目
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+
+
+#order
+business_package:
+  - api_name: business_package
+    info: 获取套餐信息
+    set:
+      package_id: [ $.result..id,1 ]
+    assertion:
+      code: "00000"
+      msg: success
+create_order:
+  - api_name: create_order
+    info: 创建订单
+    data: { package_id: $<p_id>,package_level: 2,company: 自动化测试,phone: phone_num,team_id: $<t_id>,member_buy: 20,amount_buy: 12,total_price: 1832.64 }
+    get:
+      t_id: team_id
+      p_id: package_id
+    set:
+      order_id: $.result.order_id
+    assertion:
+      code: "00000"
+      msg: success
+  - api_name: create_order
+    info: 已有待支付
+    data: { package_id: $<p_id>,package_level: 2,company: 公司名,phone: phone_num,team_id: $<t_id>,member_buy: 20,amount_buy: 12,total_price: 1832.64 }
+    get:
+      t_id: team_id
+      p_id: package_id
+    assertion:
+      code: "11006"
+      msg: exist unpaied order
+cancel_order:
+  - api_name: cancel_order
+    info: 取消订单
+    data: { team_id: $<t_id>,order_id: $<o_id> }
+    get:
+      t_id: team_id
+      o_id: order_id
+    assertion:
+      code: "00000"
+      msg: success
+contract:
+  - api_name: contract
+    info: 申请合同
+    data: { company: 公司名,credit_code: 123,phone: 123,postal_addr: 公司地址,team_id: $<t_id>,order_id: $<o_id> ,applier_name: 3 }
+    get:
+      t_id: team_id
+      o_id: order_id
+    set:
+      contract_id: $.result.id
+      contract_no: $.result.contract_no
+    assertion:
+      code: "00000"
+      msg: success
+  - api_name: get_contract
+    info: 查看合同
+    data: { team_id: $<t_id>,order_id: $<o_id> }
+    get:
+      t_id: team_id
+      o_id: order_id
+    assertion:
+      code: "00000"
+      msg: success
+invoiceInfo:
+  - api_name: invoiceInfo
+    info: 获取历史开票信息
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+    assertion:
+      code: "11053"
+      msg: no history invoice info
+company_info:
+  - api_name: company_info
+    info: 获取税号信息
+    data: { company: 创盛视联数码科技（北京）有限公司 }
+    assertion:
+      code: "00000"
+      msg: success
+invoice:
+  - api_name: invoice
+    info: 订单未支付开发票
+    data: { company: 公司名,tax_id_no: 91110108626250065E,receiver_phone: 123,
+            invoice_content: 软件服务费,invoice_type: 1,receiver_email: 1@1.com,
+            register_phone: 123,deposit_bank: 123,bank_account: 123,
+            team_id: $<t_id>,order_id: $<o_id> }
+    get:
+      t_id: team_id
+      o_id: order_id
+    assertion:
+      code: "11006"
+      msg: exist unpaied order
+team_service:
+  - api_name: team_service
+    info: 获取team_service
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+put_team_service:
+  - api_name: put_team_service
+    info: 修改团队服务信息
+    data: { team_id: $<t_id>,company: 1 ,phone: "",tax_id_no: "" }
+    get:
+      t_id: team_id
+
+
+expire_notice:
+  - api_name: expire_notice
+    info: 获取team_service
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+
+order_list:
+  - api_name: order_list
+    info: 获取订单列表
+    data: { team_id: $<t_id> }
+    get:
+      t_id: team_id
+    assertion:
+      code: "00000"
+      msg: success
+app_version:
+  - api_name: app_version
+    info: 获取app最新版本
+
+
+
+#下载文件
+down_file:
+  - api_name: down_ps_mac
+    info: 下载MacPs
+  - api_name: down_ps_win
+    info: 下载WinPs
+  - api_name: down_xd_mac
+    info: 下载MacXd
+  - api_name: down_xd_win
+    info: 下载WinXd
+  - api_name: down_dsm
+    info: 下载Dsm
+  - api_name: down_axure_mac
+    info: 下载MacAxure
+  - api_name: down_axure_win
+    info: 下载WinAxure
+  - api_name: down_sketch
+    info: 下载Sketch
+
+#插件
+store_token:
+  - api_name: store_token
+    info: 存储生成的token
+    data: { connection_id: $<connection_id> }
+    generate:
+      connection_id: uuid
+    assertion:
+      code: "00000"
+      msg: Success
+get_login_token:
+  - api_name: get_login_token
+    info: 获取token
+    data: { connection_id: $<connection_id> }
+    cookies: False
+    get:
+      connection_id: connection_id
+    assertion:
+      code: "00000"
+      msg: Success
+      data.token: exist
+plugin_user_teams:
+  - api_name: plugin_user_teams
+    info: 获取插件团队
+    data: { }
+    assertion:
+      code: "00000"
+      msg: Success
+plugin_err_status:
+  - api_name: plugin_err_status
+    info: 检测插件可上传状态
+    data: { project_id: $<project_id>,team_id: $<team_id> }
+    get:
+      team_id: team_id
+      project_id: project_id
+    assertion:
+      code: "00000"
+      msg: Success
+
+upload_files:
+  - data:
+      model: magic
+      max_size: "104857600"
+      auth_key: magic_base
+      type: image
+      switch: "True"
+      files: /Users/apple/PycharmProjects/ApiTest/files/imageA.png
+      auth_par: { project_id: $<project_id>,team_id: $<team_id> }
+      save_par:
+        project_id: $<project_id>
+        team_id: $<team_id>
+        images: [ { "name": imageA,"width": "339","height": "339","url": "","id": $<imageA_id>,"positionX": "3220.5576725976875","positionY": "1588.081239905533","type": "image","group": [ ],"position_x": "3220.5576725976875","position_y": "1588.081239905533" } ]
+    api_name: base
+    info: 上传文件
+    get:
+      project_id: project_id
+      team_id: team_id
+    generate:
+      imageA_id: uuid
