@@ -7,7 +7,7 @@ from core.hook_report import SendReport
 from core.util import *
 
 if __name__ == "__main__":
-    env = ""
+    # env = ""
     if len(sys.argv) == 2:
         if sys.argv[1] in ["dev", "next", "k8sv1", "k8sv2", "zz-test", ""]:
             env = sys.argv[1]

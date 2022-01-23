@@ -1,0 +1,14 @@
+2022-01-23 20:31:22,392::INFO::test_check_email[已注册邮箱]-->执行状态：passed 请求地址：https://zz-test.lanhuapp.com/api/account/check_email3 响应状态：200 响应时间:436
+2022-01-23 20:31:22,627::INFO::test_check_email[未注册账户]-->执行状态：passed 请求地址：https://zz-test.lanhuapp.com/api/account/check_email3 响应状态：200 响应时间:206
+2022-01-23 20:31:22,960::INFO::test_send_sms_code[发送短信0]-->执行状态：passed 请求地址：https://zz-test.lanhuapp.com/passport/api/send_verification_code_message 响应状态：200 响应时间:222
+2022-01-23 20:31:23,229::INFO::test_send_sms_code[发送短信1]-->执行状态：passed 请求地址：https://zz-test.lanhuapp.com/passport/api/send_verification_code_message 响应状态：200 响应时间:216
+2022-01-23 20:31:23,448::INFO::test_sms_register[短信注册]-->执行状态：passed 请求地址：https://zz-test.lanhuapp.com/passport/api/verify_sms_register 响应状态：200 响应时间:159
+2022-01-23 20:31:23,790::ERROR::test_register[初始化成功]-->执行状态：failed 请求地址：https://zz-test.lanhuapp.com/api/account/register 响应状态：200 响应时间:276
+2022-01-23 20:31:23,968::ERROR::test_register[初始化成功]-->执行状态：failed 请求地址：https://zz-test.lanhuapp.com/api/account/register 响应状态：200 响应时间:98
+2022-01-23 20:32:51,871::INFO::test_check_email[已注册邮箱]-->执行状态：passed 请求地址：https://zz-test.lanhuapp.com/api/account/check_email3 响应状态：200 响应时间:160
+2022-01-23 20:32:52,051::INFO::test_check_email[未注册账户]-->执行状态：passed 请求地址：https://zz-test.lanhuapp.com/api/account/check_email3 响应状态：200 响应时间:144
+2022-01-23 20:32:52,224::INFO::test_send_sms_code[发送短信0]-->执行状态：passed 请求地址：https://zz-test.lanhuapp.com/passport/api/send_verification_code_message 响应状态：200 响应时间:77
+2022-01-23 20:32:52,363::INFO::test_send_sms_code[发送短信1]-->执行状态：passed 请求地址：https://zz-test.lanhuapp.com/passport/api/send_verification_code_message 响应状态：200 响应时间:51
+2022-01-23 20:32:52,504::INFO::test_sms_register[短信注册]-->执行状态：passed 请求地址：https://zz-test.lanhuapp.com/passport/api/verify_sms_register 响应状态：200 响应时间:76
+2022-01-23 20:32:52,663::ERROR::test_register[初始化成功]-->执行状态：failed 请求地址：https://zz-test.lanhuapp.com/api/account/register 响应状态：200 响应时间:91
+2022-01-23 20:32:52,864::ERROR::test_register[初始化成功]-->执行状态：failed 请求地址：https://zz-test.lanhuapp.com/api/account/register 响应状态：200 响应时间:92
