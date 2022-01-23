@@ -84,4 +84,4 @@ if __name__ == '__main__':
         sendmailnow(["sunshijiang@jwzg.com"], "【测试技术日报】" + str(nowdate), mail_msg)
 
         # 发送到飞书
-        #feishi_send(datalists)
+        feishi_send(datalists)
