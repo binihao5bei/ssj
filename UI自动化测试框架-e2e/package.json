@@ -1,0 +1,29 @@
+{
+  "name": "ts-playwright",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "cm": "yarn eslint && cz",
+    "test": "playwright test --config ./config/playwright.config.js",
+    "show": "playwright show-trace",
+    "eslint": "eslint ./**/*.js --fix",
+    "allure": "allure generate ./allure-results -o ./allure-results/exportReport --clean"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.17.1",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "3.3.0",
+    "eslint": "^8.2.0",
+    "eslint-config-google": "^0.14.0",
+    "experimental-allure-playwright": "^0.0.3",
+    "husky": "^7.0.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

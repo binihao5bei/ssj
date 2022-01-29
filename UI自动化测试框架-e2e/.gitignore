@@ -1,0 +1,12 @@
+node_modules
+*.log
+**/*/**.log
+.idea
+.scannerwork
+.DS_Store
+**/*/.DS_Store
+packages/revogrid-proxy
+*.pem
+*.log
+test-results
+allure-results
