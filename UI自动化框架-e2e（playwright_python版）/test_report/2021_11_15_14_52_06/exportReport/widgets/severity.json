@@ -1,0 +1,101 @@
+[ {
+  "uid" : "f03126bab31eb000",
+  "name" : "test_addHBlock[chromium-三级标题]",
+  "time" : {
+    "start" : 1636959173734,
+    "stop" : 1636959173748,
+    "duration" : 14
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "746596001fd8fdf7",
+  "name" : "test_addHBlock[chromium-二级标题]",
+  "time" : {
+    "start" : 1636959173359,
+    "stop" : 1636959173376,
+    "duration" : 17
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "76e8021cb5423582",
+  "name" : "test_addListBlock[chromium-\\u6709\\u5e8f\\u5217\\u8868]",
+  "time" : {
+    "start" : 1636959127249,
+    "stop" : 1636959127253,
+    "duration" : 4
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "d4edb0925d22d9f8",
+  "name" : "test_addListBlock[chromium-\\u65e0\\u5e8f\\u5217\\u8868]",
+  "time" : {
+    "start" : 1636959127249,
+    "stop" : 1636959127252,
+    "duration" : 3
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "21054b2dc5344995",
+  "name" : "test_addHBlock[chromium-\\u4e8c\\u7ea7\\u6807\\u9898]",
+  "time" : {
+    "start" : 1636959127249,
+    "stop" : 1636959127270,
+    "duration" : 21
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "537358cd09fe8eff",
+  "name" : "test_addHBlock[chromium-一级标题]",
+  "time" : {
+    "start" : 1636959143563,
+    "stop" : 1636959172049,
+    "duration" : 28486
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "50bfac1526077c5d",
+  "name" : "test_addListBlock[chromium-有序列表]",
+  "time" : {
+    "start" : 1636959174153,
+    "stop" : 1636959174155,
+    "duration" : 2
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "32912d0320869833",
+  "name" : "test_addListBlock[chromium-无序列表]",
+  "time" : {
+    "start" : 1636959174602,
+    "stop" : 1636959174603,
+    "duration" : 1
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "67118fed9e8602ea",
+  "name" : "test_addHBlock[chromium-\\u4e00\\u7ea7\\u6807\\u9898]",
+  "time" : {
+    "start" : 1636959127249,
+    "stop" : 1636959172015,
+    "duration" : 44766
+  },
+  "status" : "failed",
+  "severity" : "normal"
+}, {
+  "uid" : "db2cd71e36aec90e",
+  "name" : "test_addHBlock[chromium-\\u4e09\\u7ea7\\u6807\\u9898]",
+  "time" : {
+    "start" : 1636959127249,
+    "stop" : 1636959127266,
+    "duration" : 17
+  },
+  "status" : "failed",
+  "severity" : "normal"
+} ]

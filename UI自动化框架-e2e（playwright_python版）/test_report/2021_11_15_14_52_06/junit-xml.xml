@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="5" skipped="0" tests="5" time="47.545" timestamp="2021-11-15T14:52:07.249988" hostname="localhost"><testcase classname="test_case.test_001.Test001" name="test_addHBlock[chromium-\u4e00\u7ea7\u6807\u9898]" time="44.766"><failure message="playwright._impl._api_types.Error: Execution context was destroyed, most likely because of a navigation.&#10;=========================== logs ===========================&#10;waiting for selector &quot;.ce-paragraph &gt;&gt; nth=-1&quot;&#10;  selector resolved to visible &lt;div data-nested=&quot;0&quot; contenteditable=&quot;true&quot; class=&quot;ce…&gt;默认文本，现在是：2021-11-15 14:52:23&lt;/div&gt;&#10;attempting hover action&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #1&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #2&#10;  waiting 20ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #3&#10;  waiting 100ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #4&#10;  waiting 100ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #5&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #6&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #7&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #8&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #9&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #10&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #11&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #12&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #13&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #14&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #15&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #16&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #17&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #18&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #19&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #20&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #21&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #22&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #23&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #24&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #25&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #26&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #27&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #28&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #29&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #30&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #31&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #32&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #33&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #34&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #35&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #36&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #37&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #38&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #39&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #40&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #41&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #42&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #43&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #44&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #45&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #46&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #47&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #48&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #49&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #50&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #51&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #52&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #53&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #54&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,356)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #55&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;  element is visible and stable&#10;  scrolling into view if needed&#10;  done scrolling&#10;  checking that element receives pointer events at (780.48,300)&#10;  &lt;div class=&quot;codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d=&quot;&quot; data-v-60c98f72=&quot;&quot; class=&quot;vis…&gt;…&lt;/div&gt; subtree intercepts pointer events&#10;retrying hover action, attempt #56&#10;  waiting 500ms&#10;  waiting for element to be visible and stable&#10;============================================================">self = &lt;test_case.test_001.Test001 object at 0x1045f2ee0&gt;, title = '一级标题'
+
+    @pytest.mark.run(order=1)
+    @pytest.mark.parametrize(
+        "title",
+        ['一级标题', '二级标题', '三级标题'],
+    )
+    def test_addHBlock(self, title):
+&gt;       addHeaderBlock(frame, title)
+
+test_case/test_001.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+page/tsPage.py:88: in addHeaderBlock
+    addBlock(frame, title)
+page/tsPage.py:80: in addBlock
+    frame.hover('.ce-paragraph &gt;&gt; nth=-1')
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/sync_api/_generated.py:4451: in hover
+    self._sync(
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_sync_base.py:111: in _sync
+    return task.result()
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_frame.py:530: in hover
+    await self._channel.send("hover", locals_to_params(locals()))
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:39: in send
+    return await self.inner_send(method, params, False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;playwright._impl._connection.Channel object at 0x105154040&gt;, method = 'hover', params = {'selector': '.ce-paragraph &gt;&gt; nth=-1'}, return_as_dict = False
+
+    async def inner_send(
+        self, method: str, params: Optional[Dict], return_as_dict: bool
+    ) -&gt; Any:
+        if params is None:
+            params = {}
+        callback = self._connection._send_message_to_server(self._guid, method, params)
+    
+        done, pending = await asyncio.wait(
+            {self._connection._transport.on_error_future, callback.future},
+            return_when=asyncio.FIRST_COMPLETED,
+        )
+        if not callback.future.done():
+            callback.future.cancel()
+&gt;       result = next(iter(done)).result()
+E       playwright._impl._api_types.Error: Execution context was destroyed, most likely because of a navigation.
+E       =========================== logs ===========================
+E       waiting for selector ".ce-paragraph &gt;&gt; nth=-1"
+E         selector resolved to visible &lt;div data-nested="0" contenteditable="true" class="ce…&gt;默认文本，现在是：2021-11-15 14:52:23&lt;/div&gt;
+E       attempting hover action
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #1
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #2
+E         waiting 20ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #3
+E         waiting 100ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #4
+E         waiting 100ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #5
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #6
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #7
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #8
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #9
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #10
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #11
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #12
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #13
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #14
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #15
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #16
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #17
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #18
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #19
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #20
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #21
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #22
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #23
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #24
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #25
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #26
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #27
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #28
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #29
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #30
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #31
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #32
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #33
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #34
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #35
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #36
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #37
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #38
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #39
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #40
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #41
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #42
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #43
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #44
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #45
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #46
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #47
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #48
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #49
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #50
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #51
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #52
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #53
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #54
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,356)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #55
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E         element is visible and stable
+E         scrolling into view if needed
+E         done scrolling
+E         checking that element receives pointer events at (780.48,300)
+E         &lt;div class="codex-editor codex-editor--narrow codex-e…&gt;…&lt;/div&gt; from &lt;div data-v-4e06f13d="" data-v-60c98f72="" class="vis…&gt;…&lt;/div&gt; subtree intercepts pointer events
+E       retrying hover action, attempt #56
+E         waiting 500ms
+E         waiting for element to be visible and stable
+E       ============================================================
+
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:57: Error</failure></testcase><testcase classname="test_case.test_001.Test001" name="test_addHBlock[chromium-\u4e8c\u7ea7\u6807\u9898]" time="0.021"><failure message="playwright._impl._api_types.Error: waitForFunction failed: frame got detached.&#10;=========================== logs ===========================&#10;waiting for selector &quot;.ce-paragraph &gt;&gt; nth=-1&quot;&#10;============================================================">self = &lt;test_case.test_001.Test001 object at 0x10577aca0&gt;, title = '二级标题'
+
+    @pytest.mark.run(order=1)
+    @pytest.mark.parametrize(
+        "title",
+        ['一级标题', '二级标题', '三级标题'],
+    )
+    def test_addHBlock(self, title):
+&gt;       addHeaderBlock(frame, title)
+
+test_case/test_001.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+page/tsPage.py:88: in addHeaderBlock
+    addBlock(frame, title)
+page/tsPage.py:80: in addBlock
+    frame.hover('.ce-paragraph &gt;&gt; nth=-1')
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/sync_api/_generated.py:4451: in hover
+    self._sync(
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_sync_base.py:111: in _sync
+    return task.result()
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_frame.py:530: in hover
+    await self._channel.send("hover", locals_to_params(locals()))
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:39: in send
+    return await self.inner_send(method, params, False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;playwright._impl._connection.Channel object at 0x105154040&gt;, method = 'hover', params = {'selector': '.ce-paragraph &gt;&gt; nth=-1'}, return_as_dict = False
+
+    async def inner_send(
+        self, method: str, params: Optional[Dict], return_as_dict: bool
+    ) -&gt; Any:
+        if params is None:
+            params = {}
+        callback = self._connection._send_message_to_server(self._guid, method, params)
+    
+        done, pending = await asyncio.wait(
+            {self._connection._transport.on_error_future, callback.future},
+            return_when=asyncio.FIRST_COMPLETED,
+        )
+        if not callback.future.done():
+            callback.future.cancel()
+&gt;       result = next(iter(done)).result()
+E       playwright._impl._api_types.Error: waitForFunction failed: frame got detached.
+E       =========================== logs ===========================
+E       waiting for selector ".ce-paragraph &gt;&gt; nth=-1"
+E       ============================================================
+
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:57: Error</failure></testcase><testcase classname="test_case.test_001.Test001" name="test_addHBlock[chromium-\u4e09\u7ea7\u6807\u9898]" time="0.017"><failure message="playwright._impl._api_types.Error: waitForFunction failed: frame got detached.&#10;=========================== logs ===========================&#10;waiting for selector &quot;.ce-paragraph &gt;&gt; nth=-1&quot;&#10;============================================================">self = &lt;test_case.test_001.Test001 object at 0x1045bfeb0&gt;, title = '三级标题'
+
+    @pytest.mark.run(order=1)
+    @pytest.mark.parametrize(
+        "title",
+        ['一级标题', '二级标题', '三级标题'],
+    )
+    def test_addHBlock(self, title):
+&gt;       addHeaderBlock(frame, title)
+
+test_case/test_001.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+page/tsPage.py:88: in addHeaderBlock
+    addBlock(frame, title)
+page/tsPage.py:80: in addBlock
+    frame.hover('.ce-paragraph &gt;&gt; nth=-1')
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/sync_api/_generated.py:4451: in hover
+    self._sync(
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_sync_base.py:111: in _sync
+    return task.result()
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_frame.py:530: in hover
+    await self._channel.send("hover", locals_to_params(locals()))
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:39: in send
+    return await self.inner_send(method, params, False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;playwright._impl._connection.Channel object at 0x105154040&gt;, method = 'hover', params = {'selector': '.ce-paragraph &gt;&gt; nth=-1'}, return_as_dict = False
+
+    async def inner_send(
+        self, method: str, params: Optional[Dict], return_as_dict: bool
+    ) -&gt; Any:
+        if params is None:
+            params = {}
+        callback = self._connection._send_message_to_server(self._guid, method, params)
+    
+        done, pending = await asyncio.wait(
+            {self._connection._transport.on_error_future, callback.future},
+            return_when=asyncio.FIRST_COMPLETED,
+        )
+        if not callback.future.done():
+            callback.future.cancel()
+&gt;       result = next(iter(done)).result()
+E       playwright._impl._api_types.Error: waitForFunction failed: frame got detached.
+E       =========================== logs ===========================
+E       waiting for selector ".ce-paragraph &gt;&gt; nth=-1"
+E       ============================================================
+
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:57: Error</failure></testcase><testcase classname="test_case.test_001.Test001" name="test_addListBlock[chromium-\u6709\u5e8f\u5217\u8868]" time="0.004"><failure message="playwright._impl._api_types.Error: waitForFunction failed: frame got detached.&#10;=========================== logs ===========================&#10;waiting for selector &quot;.ce-paragraph &gt;&gt; nth=-1&quot;&#10;============================================================">self = &lt;test_case.test_001.Test001 object at 0x105f43b50&gt;, type = '有序列表'
+
+    @pytest.mark.run(order=2)
+    @pytest.mark.parametrize(
+        "type",
+        ['有序列表', '无序列表'],
+    )
+    def test_addListBlock(self, type):
+&gt;       addListBlock(frame, type)
+
+test_case/test_001.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+page/tsPage.py:98: in addListBlock
+    addBlock(frame, type)
+page/tsPage.py:80: in addBlock
+    frame.hover('.ce-paragraph &gt;&gt; nth=-1')
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/sync_api/_generated.py:4451: in hover
+    self._sync(
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_sync_base.py:111: in _sync
+    return task.result()
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_frame.py:530: in hover
+    await self._channel.send("hover", locals_to_params(locals()))
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:39: in send
+    return await self.inner_send(method, params, False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;playwright._impl._connection.Channel object at 0x105154040&gt;, method = 'hover', params = {'selector': '.ce-paragraph &gt;&gt; nth=-1'}, return_as_dict = False
+
+    async def inner_send(
+        self, method: str, params: Optional[Dict], return_as_dict: bool
+    ) -&gt; Any:
+        if params is None:
+            params = {}
+        callback = self._connection._send_message_to_server(self._guid, method, params)
+    
+        done, pending = await asyncio.wait(
+            {self._connection._transport.on_error_future, callback.future},
+            return_when=asyncio.FIRST_COMPLETED,
+        )
+        if not callback.future.done():
+            callback.future.cancel()
+&gt;       result = next(iter(done)).result()
+E       playwright._impl._api_types.Error: waitForFunction failed: frame got detached.
+E       =========================== logs ===========================
+E       waiting for selector ".ce-paragraph &gt;&gt; nth=-1"
+E       ============================================================
+
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:57: Error</failure></testcase><testcase classname="test_case.test_001.Test001" name="test_addListBlock[chromium-\u65e0\u5e8f\u5217\u8868]" time="0.003"><failure message="playwright._impl._api_types.Error: waitForFunction failed: frame got detached.&#10;=========================== logs ===========================&#10;waiting for selector &quot;.ce-paragraph &gt;&gt; nth=-1&quot;&#10;============================================================">self = &lt;test_case.test_001.Test001 object at 0x1057cd5b0&gt;, type = '无序列表'
+
+    @pytest.mark.run(order=2)
+    @pytest.mark.parametrize(
+        "type",
+        ['有序列表', '无序列表'],
+    )
+    def test_addListBlock(self, type):
+&gt;       addListBlock(frame, type)
+
+test_case/test_001.py:55: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+page/tsPage.py:98: in addListBlock
+    addBlock(frame, type)
+page/tsPage.py:80: in addBlock
+    frame.hover('.ce-paragraph &gt;&gt; nth=-1')
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/sync_api/_generated.py:4451: in hover
+    self._sync(
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_sync_base.py:111: in _sync
+    return task.result()
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_frame.py:530: in hover
+    await self._channel.send("hover", locals_to_params(locals()))
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:39: in send
+    return await self.inner_send(method, params, False)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = &lt;playwright._impl._connection.Channel object at 0x105154040&gt;, method = 'hover', params = {'selector': '.ce-paragraph &gt;&gt; nth=-1'}, return_as_dict = False
+
+    async def inner_send(
+        self, method: str, params: Optional[Dict], return_as_dict: bool
+    ) -&gt; Any:
+        if params is None:
+            params = {}
+        callback = self._connection._send_message_to_server(self._guid, method, params)
+    
+        done, pending = await asyncio.wait(
+            {self._connection._transport.on_error_future, callback.future},
+            return_when=asyncio.FIRST_COMPLETED,
+        )
+        if not callback.future.done():
+            callback.future.cancel()
+&gt;       result = next(iter(done)).result()
+E       playwright._impl._api_types.Error: waitForFunction failed: frame got detached.
+E       =========================== logs ===========================
+E       waiting for selector ".ce-paragraph &gt;&gt; nth=-1"
+E       ============================================================
+
+../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:57: Error</failure></testcase></testsuite></testsuites>

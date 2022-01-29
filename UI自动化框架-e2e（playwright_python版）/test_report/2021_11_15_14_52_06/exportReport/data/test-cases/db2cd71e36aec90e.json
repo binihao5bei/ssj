@@ -1,0 +1,58 @@
+{
+  "uid" : "db2cd71e36aec90e",
+  "name" : "test_addHBlock[chromium-\\u4e09\\u7ea7\\u6807\\u9898]",
+  "historyId" : "pytest:test_case.test_001.Test001#test_addHBlock[chromium-\\u4e09\\u7ea7\\u6807\\u9898]",
+  "time" : {
+    "start" : 1636959127249,
+    "stop" : 1636959127266,
+    "duration" : 17
+  },
+  "status" : "failed",
+  "statusMessage" : "playwright._impl._api_types.Error: waitForFunction failed: frame got detached.\n=========================== logs ===========================\nwaiting for selector \".ce-paragraph >> nth=-1\"\n============================================================",
+  "statusTrace" : "self = <test_case.test_001.Test001 object at 0x1045bfeb0>, title = '三级标题'\n\n    @pytest.mark.run(order=1)\n    @pytest.mark.parametrize(\n        \"title\",\n        ['一级标题', '二级标题', '三级标题'],\n    )\n    def test_addHBlock(self, title):\n>       addHeaderBlock(frame, title)\n\ntest_case/test_001.py:47: \n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \npage/tsPage.py:88: in addHeaderBlock\n    addBlock(frame, title)\npage/tsPage.py:80: in addBlock\n    frame.hover('.ce-paragraph >> nth=-1')\n../../../../Library/Python/3.8/lib/python/site-packages/playwright/sync_api/_generated.py:4451: in hover\n    self._sync(\n../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_sync_base.py:111: in _sync\n    return task.result()\n../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_frame.py:530: in hover\n    await self._channel.send(\"hover\", locals_to_params(locals()))\n../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:39: in send\n    return await self.inner_send(method, params, False)\n_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ \n\nself = <playwright._impl._connection.Channel object at 0x105154040>, method = 'hover', params = {'selector': '.ce-paragraph >> nth=-1'}, return_as_dict = False\n\n    async def inner_send(\n        self, method: str, params: Optional[Dict], return_as_dict: bool\n    ) -> Any:\n        if params is None:\n            params = {}\n        callback = self._connection._send_message_to_server(self._guid, method, params)\n    \n        done, pending = await asyncio.wait(\n            {self._connection._transport.on_error_future, callback.future},\n            return_when=asyncio.FIRST_COMPLETED,\n        )\n        if not callback.future.done():\n            callback.future.cancel()\n>       result = next(iter(done)).result()\nE       playwright._impl._api_types.Error: waitForFunction failed: frame got detached.\nE       =========================== logs ===========================\nE       waiting for selector \".ce-paragraph >> nth=-1\"\nE       ============================================================\n\n../../../../Library/Python/3.8/lib/python/site-packages/playwright/_impl/_connection.py:57: Error",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "resultFormat",
+    "value" : "junit"
+  }, {
+    "name" : "suite",
+    "value" : "pytest"
+  }, {
+    "name" : "host",
+    "value" : "localhost"
+  }, {
+    "name" : "testClass",
+    "value" : "test_case.test_001.Test001"
+  }, {
+    "name" : "package",
+    "value" : "test_case.test_001.Test001"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "db2cd71e36aec90e.json",
+  "parameterValues" : [ ]
+}
